@@ -1,0 +1,102 @@
+{% extends 'publics/base.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/card.css')}}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+{% endblock %}
+
+{% block body %}
+<div class="main">
+  <div class="card">
+    <div class="container">
+        <h2>{{ title }}</h2>
+
+        <canvas id="result" width="400" height="300"></canvas>
+            <script type="text/javascript" >
+            var ctx = document.getElementById('result').getContext('2d');
+            var labels =[];
+            var values = [];
+            var colors = [];
+            '{%for a,b,c in set%}'
+            labels.push('{{b}}')
+            values.push('{{a}}')
+            colors.push('{{c}}')
+            '{%endfor%}'
+            var mbti_data = {
+                    
+                    labels: labels,
+                    datasets: [{
+                        label: '# of Votes',
+                        data: values,
+                        backgroundColor: colors,
+                        borderWidth: 1,
+                        borderColor: "white",
+                    }],
+                /**options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }**/
+            }
+            var chartOptions = {
+                rotation: -Math.PI,
+                cutoutPercentage: 30,
+                circumference: Math.PI,
+                legend: {
+                    position: 'top',
+                    align:'start'
+                },
+                animation: {
+                    animateRotate: true,
+                    animateScale: true
+                },
+                labelFontFamily : "Arial",
+                labelFontStyle : "normal",
+                labelFontSize : 24,
+                labelFontColor : "#666",
+                responsive: true,
+                title: {
+                    display: true,
+                    fontsize:40,
+                    text: 'You have a certain chance of being:'
+                    },
+            };
+            var myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: mbti_data,
+                options: chartOptions
+                });
+
+            Chart.pluginService.register({
+                    beforeDraw: function(chart) {
+                        var width = chart.chart.width,
+                            height = chart.chart.height,
+                            ctx = chart.chart.ctx;
+
+                        ctx.restore();
+                        var fontSize = (height / 200).toFixed(2);
+                        ctx.font = fontSize + "em sans-serif";
+                        ctx.textBaseline = "middle";
+
+                        var text = "MBTI %",
+                            textX = Math.round((width - ctx.measureText(text).width) / 2),
+                            textY = height/1.15 ;
+
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+            });
+
+            </script>
+    </div>
+    <div>
+        <img src="../static/img/keys.jpg" alt="Jane" style="width:100%; height: 500px;">
+    </div>
+  </div>
+</div>
+
+{% endblock %}

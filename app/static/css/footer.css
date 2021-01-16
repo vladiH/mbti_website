@@ -1,0 +1,8 @@
+footer{
+  position: relative;
+}
+.feet {
+    text-align: center;
+    padding: 3px;
+    color: gray;
+  }

@@ -1,0 +1,8 @@
+header{
+    text-align: center;
+    background: rgb(79,16,173);
+background: -moz-linear-gradient(90deg, rgba(79,16,173,1) 0%, rgba(106,145,255,1) 55%, rgba(127,68,214,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(79,16,173,1) 0%, rgba(106,145,255,1) 55%, rgba(127,68,214,1) 100%);
+background: linear-gradient(90deg, rgba(79,16,173,1) 0%, rgba(106,145,255,1) 55%, rgba(127,68,214,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4f10ad",endColorstr="#7f44d6",GradientType=1);
+}

@@ -1,0 +1,71 @@
+ /* Style the navigation bar */
+ 
+ /* Add a black background color to the top navigation */
+ ul li {
+  list-style-type: none;
+}
+
+ nav{
+   width: 100%;
+   text-align: center;
+ }
+ .topnav{
+   margin: auto;
+   width: 60%;
+   text-align: center;
+ }
+  
+  li>a {
+    display: block;
+    color: aliceblue;
+    text-align: center;
+    margin-top: 1px;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the color of links on hover */
+  li>a:hover {
+    background-color: #D2006B;
+    color: aliceblue;
+    border-radius: 2px 20px;
+  }
+  
+  /* Add an active class to highlight the current page */
+  li>a.active {
+    background-color: #D2006B;
+    border-radius: 2px 20px;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  li.icon {
+    display: none;
+  } 
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen  and (-webkit-min-device-pixel-ratio : 2) and (max-width: 680px) {
+  .topnav li:not(:first-child){
+    display: none;
+  }
+  .topnav li.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio : 2) and (max-width: 680px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  .topnav.responsive li a{
+    display: block;
+    text-align: left;
+  }
+}

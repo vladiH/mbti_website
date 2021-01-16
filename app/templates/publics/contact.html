@@ -1,0 +1,43 @@
+{% extends 'publics/base.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/contact.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/card.css')}}">
+
+{% endblock %}
+
+{% block body %}
+<div class="about-section">
+    <h1>Contact me</h1>
+    <p>Please do not hesitate to send me your questions, comments or suggestions. I will be very happy to answer you.</p>
+    <p>yurihuallpavargas@gmail.com</p>
+</div>
+  
+  <h2 style="text-align:center">ME</h2>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <div class="container">
+            <img src="../static/img/me.jpg" alt="Jane" style="width:100%; height: 500px;">
+            <div class=name><p1>Yuri Vladimir Huallpa Vargas</p1></div>
+        </div>
+            <div class="descripcion">
+                <p>Hey, soy Yuri Vladimir Huallpa Vargas, ingeniero informatico y de sistemas</p>
+            <p></p>
+            <p>Apasionado en la inteligencia artificial, ciencia de datos, investigación y TICs. Cuento con 3 años de experiencia, en mi trayecto he realizado proyectos como chatbots, análisis de indicadores de desarrollo de América Latina, Interpretación automática de la lengua de señas del Perú, desarrollo de apps y cuento con dos publicaciones realizadas. Actualmente investigo sobre las preferencias personales mas importantes de una persona según el test  <a href="https://www.myersbriggs.org/my-mbti-personality-type/mbti-basics/">Myers-Briggs</a> 
+            </p>
+            <p></p>
+            <p>
+                Me encanta compartir mis conocimientos, siempre dispuesto nuevos desafios.
+                Soy de los que piensan que es mejor intentar algo nuevo que permanecer en nuestra zona de confort.
+            </p>
+            <p>Espero que el contenido de este sitio te ayude a conocerme un poco. Para contactar conmigo puedes hacerlo a través del correo electrónico <strong>yurihuallpavargas@gmail.com</strong> y por supuesto, a través de las redes sociales.</p>
+            </div>
+            <div class="social">
+                <a href="https://www.facebook.com/yurivladimir.huallpavargas" class="fa fa-facebook"></a>
+                <a href="https://github.com/vladiH" class="fa fa-github"></a>
+                <a href="https://www.linkedin.com/in/yuri-vladimir/" class = "fa fa-linkedin"></a>
+            </div>
+      </div>
+    </div>
+  </div> 
+{% endblock %}

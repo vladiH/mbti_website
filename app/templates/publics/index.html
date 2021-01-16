@@ -1,0 +1,52 @@
+{% extends 'publics/base.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/card.css')}}">
+{% endblock %}
+
+{% block body %}
+<div class="main">
+  <div class="card">
+    <div class="container">
+      <h2 class="blockquote text-center">Myers Briggs Test</h2>
+      <h3 class="blockquote text-center">
+        <p style="color: gray;">What’s your personality type?</p>
+      </h3>
+      <img src="../static/img/personality1.jpg" alt="personality" >
+    </div>
+    <div class="container">
+      <form action="/" method="POST">
+        <div class="row">
+          <!-- <div class="col-25">
+            <label for="subject">Subject</label>
+          </div> -->
+          <div class="col-90">
+            <textarea class="form-control" id="subject" name="subject" placeholder="Write something.." style="height:200px" minlength="50"></textarea>
+            
+          </div>
+        </div>
+        <div class="row">
+          <input type="submit" value="Discover">
+        </div>
+      </form>
+    </div> 
+  </div>
+  <ul>
+    <h3>Some examples</h3>
+    <li>
+      <strong>INFP</strong>
+      She was once bright, bubbly, and ambitious, even. She had dreams, and wants. Her smile would brighten up the room.
+Yet, one day, she stopped. Smiles ceased to happen, or if they did, they looked so dead. There wasn't any shine in her eyes when she smiled. It was like a plastic doll, eyes in a daze, distant. It was as if she was always somewhere else. Her head, perhaps? Or maybe a whole different world.
+    </li>
+    <li>
+      <strong>ENTP</strong>
+      This lady at the bus stop looks really friendly and she might be fun to talk with. Let me go and say “hi” to her for no reason at all, and despite the fact that I might be on my road in a couple minutes.
+    </li>
+    <li>
+      <strong>ENFP</strong>
+      Let me start a whole new school so I can feel that excitement of getting into a new social environment again! I know it had just been a term since I started this one, but I already know everyone here!
+    </li>
+  </ul>
+</div>
+
+{% endblock %}
