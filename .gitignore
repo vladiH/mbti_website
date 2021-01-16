@@ -120,4 +120,4 @@ guide.md
 
 # Uncomment the line below if using in production
 # You shouldn't keep your config file in version control
-config.py
+#config.py
